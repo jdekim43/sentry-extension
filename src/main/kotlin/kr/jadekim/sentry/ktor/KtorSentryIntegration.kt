@@ -17,14 +17,14 @@ import kr.jadekim.server.ktor.*
 import java.net.InetAddress
 
 data class UserInfo(
-    val userIdx: Int,
+    val userId: Int,
     val userName: String = "",
     val email: String = "",
     val extra: Map<String, Any> = emptyMap()
 ) {
 
     fun toSentryUser(remoteIp: String?) = User(
-        userIdx.toString(),
+        userId.toString(),
         userName,
         remoteIp,
         email,
